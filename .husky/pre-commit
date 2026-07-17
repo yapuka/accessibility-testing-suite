@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-# No pre-commit checks for now.
-exit 0
+npm run format:check
+npm run lint:a11y
