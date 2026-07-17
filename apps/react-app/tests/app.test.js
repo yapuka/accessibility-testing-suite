@@ -1,9 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { getButtonExamples } from '../src/App.tsx';
 
-test('react accessibility demo includes a form heading and label', () => {
-  const markup =
-    '<main><h1>React accessibility demo</h1><form><label for="name">Name</label><input id="name" name="name" /></form></main>';
-  assert.match(markup, /<h1>/);
-  assert.match(markup, /<label/);
+test('react accessibility demo includes accessible button examples', () => {
+  const buttons = getButtonExamples();
+
+  assert.equal(buttons.length, 3);
+  assert.deepEqual(
+    buttons.map((button) => ({ label: button.label, disabled: button.disabled })),
+    [
+      { label: 'Save changes', disabled: false },
+      { label: 'Open settings', disabled: false },
+      { label: 'Delete item', disabled: true },
+    ]
+  );
 });

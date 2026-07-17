@@ -1,9 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createAppMarkup } from '../src/main.ts';
+import { createAppMarkup, getButtonExamples } from '../src/main.ts';
 
-test('vite demo exposes accessible navigation markup', () => {
+test('vite demo exposes accessible button examples', () => {
+  const buttons = getButtonExamples();
   const markup = createAppMarkup();
-  assert.match(markup, /<form/);
-  assert.match(markup, /<label/);
+
+  assert.equal(buttons.length, 3);
+  assert.match(markup, /<button/);
+  assert.match(markup, /aria-disabled="true"/);
 });

@@ -1,24 +1,42 @@
-export interface DemoFormConfig {
-  id: string;
-  name: string;
+export interface ButtonExample {
   label: string;
+  icon: string;
+  action: string;
+  disabled: boolean;
+}
+
+export function getButtonExamples(): ButtonExample[] {
+  return [
+    { label: 'Save changes', icon: '✓', action: 'save', disabled: false },
+    { label: 'Open settings', icon: '⚙', action: 'settings', disabled: false },
+    { label: 'Delete item', icon: '🗑', action: 'delete', disabled: true },
+  ];
 }
 
 export function createAppMarkup(): string {
-  const config: DemoFormConfig = {
-    id: 'name',
-    name: 'name',
-    label: 'Name',
-  };
+  const buttons = getButtonExamples();
+  const buttonMarkup = buttons
+    .map(
+      (button) => `
+        <button
+          type="button"
+          data-action="${button.action}"
+          aria-label="${button.label}"
+          ${button.disabled ? 'aria-disabled="true" disabled' : ''}
+        >
+          <span aria-hidden="true">${button.icon}</span>
+          <span>${button.label}</span>
+        </button>`
+    )
+    .join('');
 
   return `
     <main>
       <h1>Vite accessibility demo</h1>
-      <form>
-        <label for="${config.id}">${config.label}</label>
-        <input id="${config.id}" name="${config.name}" />
-        <button type="submit">Submit</button>
-      </form>
+      <section>
+        <h2>Button examples</h2>
+        <div>${buttonMarkup}</div>
+      </section>
     </main>
   `;
 }
