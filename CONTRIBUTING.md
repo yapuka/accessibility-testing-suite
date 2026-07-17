@@ -2,18 +2,17 @@
 
 ## Commit convention
 
-Le projet utilise une convention inspirée de Gitmoji pour rendre les commits plus explicites.
+Le projet utilise Conventional Commits pour rendre les commits plus explicites et mieux adaptés aux pipelines de release.
 
 ### Exemples recommandés
 
-- `✨ add new accessibility rule`
-- `🐛 fix broken component test`
-- `🧪 add parser unit test`
-- `📝 update documentation`
-- `♻️ refactor rule parser`
-- `🚀 improve CI speed`
-- `🔧 update tooling config`
-- `🏗️ restructure monorepo`
+- `feat: add new accessibility rule`
+- `fix: fix broken component test`
+- `test: add parser unit test`
+- `docs: update documentation`
+- `refactor: refactor rule parser`
+- `chore: improve CI speed`
+- `chore: update tooling config`
 
 ## Release flow
 
