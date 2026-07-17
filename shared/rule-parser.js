@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 function parseRules(dir) {
+  if (!fs.existsSync(dir)) {
+    throw new Error(`Directory not found: ${dir}`);
+  }
+
   const files = fs.readdirSync(dir).filter((file) => file.endsWith('.md'));
 
   return files.map((file) => {
@@ -17,8 +21,11 @@ function parseRules(dir) {
       match[1]
         .split('\n')
         .filter(Boolean)
-        .map((line) => line.split(':').map((part) => part.trim())))
-    .filter(Boolean);
+        .map((line) => {
+          const [key, ...rest] = line.split(':');
+          return [key.trim(), rest.join(':').trim()];
+        })
+    );
 
     return { file, metadata, content };
   });

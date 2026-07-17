@@ -1,5 +1,7 @@
 # Accessibility Testing Suite
 
+![CI](https://github.com/<your-username>/<your-repo>/actions/workflows/ci.yml/badge.svg)
+
 Ce monorepo regroupe une base de travail pour construire une suite de tests d'accessibilité autour de composants front, de règles documentées et d'implémentations React, Angular et Vite.
 
 ## Objectif
@@ -24,13 +26,22 @@ Ce monorepo regroupe une base de travail pour construire une suite de tests d'ac
 
 ```bash
 npm install
-npm run build
+npm run rules:export
 npm run test:a11y
 npm run lint:a11y
+npm run build
 ```
+
+## CI GitHub Actions
+
+Le workflow défini dans `.github/workflows/ci.yml` exécute :
+- le lint partagé,
+- l’export des règles,
+- les tests React / Angular / Vite séparés,
+- la build générale du monorepo.
 
 ## Prochaines étapes
 
 - ajouter un vrai Storybook,
-- ajouter des tests automatisés plus riches,
-- préparer une CI GitHub Actions.
+- enrichir les règles et les tests,
+- préparer un rapport d’accessibilité plus complet.
