@@ -28,4 +28,4 @@ changelog:
         - refactor
     - title: Other Changes
       labels:
-        - "*"
+        - '*'

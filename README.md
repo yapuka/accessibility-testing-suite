@@ -39,6 +39,7 @@ Le cœur du dépôt commence à être écrit en TypeScript pour les utilitaires 
 ## CI GitHub Actions
 
 Le workflow défini dans `.github/workflows/ci.yml` exécute :
+
 - le lint partagé,
 - l’export des règles,
 - les tests React / Angular / Vite séparés,

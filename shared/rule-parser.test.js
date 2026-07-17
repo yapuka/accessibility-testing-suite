@@ -8,10 +8,7 @@ const { parseRules } = require('./rule-parser');
 test('parseRules extracts front matter metadata from markdown rules', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'a11y-rules-'));
   const filePath = path.join(tempDir, 'example.md');
-  fs.writeFileSync(
-    filePath,
-    `---\nnorm: WCAG 2.2\nid: wcag-1.1.1\n---\n\n# Example\n`
-  );
+  fs.writeFileSync(filePath, `---\nnorm: WCAG 2.2\nid: wcag-1.1.1\n---\n\n# Example\n`);
 
   const result = parseRules(tempDir);
 
