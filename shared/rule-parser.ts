@@ -1,7 +1,17 @@
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-function parseRules(dir) {
+export interface RuleMetadata {
+  [key: string]: string;
+}
+
+export interface ParsedRule {
+  file: string;
+  metadata?: RuleMetadata;
+  content: string;
+}
+
+export function parseRules(dir: string): ParsedRule[] {
   if (!fs.existsSync(dir)) {
     throw new Error(`Directory not found: ${dir}`);
   }
@@ -25,10 +35,8 @@ function parseRules(dir) {
           const [key, ...rest] = line.split(':');
           return [key.trim(), rest.join(':').trim()];
         })
-    );
+    ) as RuleMetadata;
 
     return { file, metadata, content };
   });
 }
-
-module.exports = { parseRules };

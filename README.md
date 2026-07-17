@@ -27,10 +27,14 @@ Ce monorepo regroupe une base de travail pour construire une suite de tests d'ac
 ```bash
 npm install
 npm run rules:export
+npm run test:shared
 npm run test:a11y
 npm run lint:a11y
 npm run build
+npm run typecheck
 ```
+
+Le cœur du dépôt commence à être écrit en TypeScript pour les utilitaires partagés et les futurs composants, ce qui facilite la lecture et la maintenance par les développeurs.
 
 ## CI GitHub Actions
 

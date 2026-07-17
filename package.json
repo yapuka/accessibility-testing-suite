@@ -10,9 +10,11 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "test:a11y": "npm run test:a11y --workspaces --if-present",
+    "test:a11y": "npm run test:shared && npm run test:a11y --workspaces --if-present",
+    "test:shared": "tsx --test shared/rule-parser.test.ts",
     "lint:a11y": "npm run lint:a11y --workspaces --if-present",
-    "rules:export": "node shared/rule-parser.js rules tests/rule-index.json",
+    "rules:export": "tsx shared/rule-parser.ts rules tests/rule-index.json",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -20,6 +22,8 @@
     "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.9.0",
     "eslint": "^9.9.0",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   }
 }
