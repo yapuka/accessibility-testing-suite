@@ -26,6 +26,13 @@ Ce monorepo sert à organiser des règles d'accessibilité, des composants d'exe
 - La branche `develop` sert aux changements en cours non encore validés.
 - Pour l’instant, il n’y a pas de protection stricte sur `main`; la CI est simplement exécutée sur les deux branches.
 
+## Sécurité et bonnes pratiques
+
+- Ne jamais lire, afficher, copier, transmettre ou committer des secrets, tokens, clés API, mots de passe ou variables d’environnement sensibles.
+- Traiter les fichiers correspondant à `.env`, `.env.*`, `*.key`, `*.pem`, `*.p12`, `*.pfx`, `*.crt`, `*.token` ou `secrets/` comme des données sensibles et ne pas les exposer.
+- Éviter toute opération de réécriture d’historique telle que `git push --force` ou `git commit --amend` non explicitement demandée.
+- Préférer des pushes normaux et des modifications explicites, avec vérification préalable.
+
 ## Commandes fréquentes
 
 ```bash
