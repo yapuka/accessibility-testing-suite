@@ -1,0 +1,6 @@
+{
+  "name": "eslint-config-a11y",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js"
+}

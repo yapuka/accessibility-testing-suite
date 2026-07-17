@@ -1,0 +1,21 @@
+{
+  "name": "accessibility-testing-suite",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/react-app",
+    "apps/angular-app",
+    "apps/vite-app",
+    "packages/eslint-config-a11y"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test:a11y": "npm run test:a11y --workspaces --if-present",
+    "lint:a11y": "npm run lint:a11y --workspaces --if-present",
+    "rules:export": "node shared/rule-parser.js rules tests/rule-index.json"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0"
+  }
+}

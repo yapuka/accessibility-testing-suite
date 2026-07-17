@@ -1,0 +1,26 @@
+[
+  {
+    "norm": "WCAG 2.2",
+    "id": "wcag-1.1.1",
+    "title": "Non-text Content",
+    "level": "A"
+  },
+  {
+    "norm": "RGAA",
+    "id": "rgaa-1.1",
+    "title": "Images et alternatives",
+    "level": "A"
+  },
+  {
+    "norm": "EN 301 549",
+    "id": "en-301-549-1",
+    "title": "Focus visible",
+    "level": "AA"
+  },
+  {
+    "norm": "European Accessibility Act",
+    "id": "eaa-1",
+    "title": "Information and communication",
+    "level": "A"
+  }
+]
