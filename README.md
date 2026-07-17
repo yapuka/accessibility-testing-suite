@@ -40,30 +40,28 @@ Le workflow défini dans `.github/workflows/ci.yml` exécute :
 - les tests React / Angular / Vite séparés,
 - la build générale du monorepo.
 
-## Convention de commits Gitmoji
+## Convention de commits
 
-Pour garder un historique plus lisible et faciliter les releases, le projet se base sur une convention simple inspirée de Gitmoji :
+Pour garder un historique plus lisible et faciliter les releases, le projet suit une convention simple basée sur Conventional Commits :
 
-- `✨` pour une nouvelle fonctionnalité
-- `🐛` pour un correctif
-- `🧪` pour les tests
-- `📝` pour la documentation
-- `♻️` pour un refactoring
-- `🚀` pour une amélioration de performance ou de livraison
-- `🔧` pour la configuration / tooling
-- `🏗️` pour l’architecture ou la structure du projet
+- `feat:` pour une nouvelle fonctionnalité
+- `fix:` pour un correctif
+- `test:` pour les tests
+- `docs:` pour la documentation
+- `refactor:` pour un refactoring
+- `chore:` pour la maintenance ou la configuration
 
 Exemples :
 
 ```bash
-git commit -m "✨ add initial accessibility rules"
-git commit -m "🐛 fix vite test import"
-git commit -m "🧪 add parser unit test"
+git commit -m "feat: add initial accessibility rules"
+git commit -m "fix: correct vite test import"
+git commit -m "test: add parser unit test"
 ```
 
 ## Releases notes
 
-Quand tu voudras préparer une release, tu peux créer une release GitHub à partir d’un tag et y ajouter un résumé basé sur les commits Gitmoji, par exemple :
+Quand tu voudras préparer une release, tu peux créer une release GitHub à partir d’un tag et y ajouter un résumé basé sur les commits, par exemple :
 
 ```bash
 git tag v0.1.0

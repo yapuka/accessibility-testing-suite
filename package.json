@@ -12,10 +12,14 @@
     "build": "npm run build --workspaces --if-present",
     "test:a11y": "npm run test:a11y --workspaces --if-present",
     "lint:a11y": "npm run lint:a11y --workspaces --if-present",
-    "rules:export": "node shared/rule-parser.js rules tests/rule-index.json"
+    "rules:export": "node shared/rule-parser.js rules tests/rule-index.json",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.9.0",
-    "eslint": "^9.9.0"
+    "eslint": "^9.9.0",
+    "husky": "^9.1.7"
   }
 }
