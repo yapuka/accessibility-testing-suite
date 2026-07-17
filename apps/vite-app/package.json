@@ -6,10 +6,11 @@
   "scripts": {
     "build": "echo 'Vite app build placeholder'",
     "lint:a11y": "eslint src --config ../../eslint.config.js",
-    "test:a11y": "node --test tests/*.test.js"
+    "test:a11y": "tsx --test tests/*.test.js"
   },
   "devDependencies": {
     "eslint": "^9.9.0",
+    "typescript": "^5.7.3",
     "vite": "^5.4.10"
   }
 }

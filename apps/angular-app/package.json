@@ -6,6 +6,9 @@
   "scripts": {
     "build": "echo 'Angular app build placeholder'",
     "lint:a11y": "echo 'Angular a11y lint placeholder'",
-    "test:a11y": "node --test tests/*.test.js"
+    "test:a11y": "tsx --test tests/*.test.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
   }
 }
